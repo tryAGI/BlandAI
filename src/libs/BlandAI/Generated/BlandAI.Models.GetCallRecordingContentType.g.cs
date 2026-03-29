@@ -11,11 +11,11 @@ namespace BlandAI
         /// <summary>
         /// 
         /// </summary>
-        AudioDividempeg,
+        AudioMpeg,
         /// <summary>
         /// 
         /// </summary>
-        AudioDividewav,
+        AudioWav,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace BlandAI
         {
             return value switch
             {
-                GetCallRecordingContentType.AudioDividempeg => "audio/mpeg",
-                GetCallRecordingContentType.AudioDividewav => "audio/wav",
+                GetCallRecordingContentType.AudioMpeg => "audio/mpeg",
+                GetCallRecordingContentType.AudioWav => "audio/wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace BlandAI
         {
             return value switch
             {
-                "audio/mpeg" => GetCallRecordingContentType.AudioDividempeg,
-                "audio/wav" => GetCallRecordingContentType.AudioDividewav,
+                "audio/mpeg" => GetCallRecordingContentType.AudioMpeg,
+                "audio/wav" => GetCallRecordingContentType.AudioWav,
                 _ => null,
             };
         }
