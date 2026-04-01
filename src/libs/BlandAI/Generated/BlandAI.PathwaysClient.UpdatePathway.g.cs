@@ -213,7 +213,6 @@ namespace BlandAI
             global::System.Collections.Generic.IList<global::BlandAI.PathwayEdge>? edges = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::BlandAI.UpdatePathwayRequest
             {
                 Name = name,

@@ -205,7 +205,6 @@ namespace BlandAI
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> questions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::BlandAI.AnalyzeCallRequest
             {
                 Goal = goal,
