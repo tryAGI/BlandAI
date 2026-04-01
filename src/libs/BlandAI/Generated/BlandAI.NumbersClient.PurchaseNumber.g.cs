@@ -203,7 +203,6 @@ namespace BlandAI
             string? phoneNumber = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::BlandAI.PurchaseNumberRequest
             {
                 AreaCode = areaCode,
