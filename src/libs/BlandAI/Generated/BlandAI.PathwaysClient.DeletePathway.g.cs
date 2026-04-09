@@ -5,6 +5,25 @@ namespace BlandAI
 {
     public partial class PathwaysClient
     {
+
+
+        private static readonly global::BlandAI.EndPointSecurityRequirement s_DeletePathwaySecurityRequirement0 =
+            new global::BlandAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::BlandAI.EndPointAuthorizationRequirement[]
+                {                    new global::BlandAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::BlandAI.EndPointSecurityRequirement[] s_DeletePathwaySecurityRequirements =
+            new global::BlandAI.EndPointSecurityRequirement[]
+            {                s_DeletePathwaySecurityRequirement0,
+            };
         partial void PrepareDeletePathwayArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pathwayId);
@@ -38,9 +57,15 @@ namespace BlandAI
                 httpClient: HttpClient,
                 pathwayId: ref pathwayId);
 
+
+            var __authorizations = global::BlandAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeletePathwaySecurityRequirements,
+                operationName: "DeletePathwayAsync");
+
             var __pathBuilder = new global::BlandAI.PathBuilder(
                 path: $"/v1/pathway/{pathwayId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -50,7 +75,7 @@ namespace BlandAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

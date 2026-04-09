@@ -5,6 +5,25 @@ namespace BlandAI
 {
     public partial class NumbersClient
     {
+
+
+        private static readonly global::BlandAI.EndPointSecurityRequirement s_PurchaseNumberSecurityRequirement0 =
+            new global::BlandAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::BlandAI.EndPointAuthorizationRequirement[]
+                {                    new global::BlandAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::BlandAI.EndPointSecurityRequirement[] s_PurchaseNumberSecurityRequirements =
+            new global::BlandAI.EndPointSecurityRequirement[]
+            {                s_PurchaseNumberSecurityRequirement0,
+            };
         partial void PreparePurchaseNumberArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::BlandAI.PurchaseNumberRequest request);
@@ -41,9 +60,15 @@ namespace BlandAI
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::BlandAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PurchaseNumberSecurityRequirements,
+                operationName: "PurchaseNumberAsync");
+
             var __pathBuilder = new global::BlandAI.PathBuilder(
                 path: "/numbers/purchase",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace BlandAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
