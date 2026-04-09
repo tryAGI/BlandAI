@@ -5,6 +5,25 @@ namespace BlandAI
 {
     public partial class AccountClient
     {
+
+
+        private static readonly global::BlandAI.EndPointSecurityRequirement s_GetAccountDetailsSecurityRequirement0 =
+            new global::BlandAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::BlandAI.EndPointAuthorizationRequirement[]
+                {                    new global::BlandAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::BlandAI.EndPointSecurityRequirement[] s_GetAccountDetailsSecurityRequirements =
+            new global::BlandAI.EndPointSecurityRequirement[]
+            {                s_GetAccountDetailsSecurityRequirement0,
+            };
         partial void PrepareGetAccountDetailsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetAccountDetailsRequest(
@@ -33,9 +52,15 @@ namespace BlandAI
             PrepareGetAccountDetailsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::BlandAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAccountDetailsSecurityRequirements,
+                operationName: "GetAccountDetailsAsync");
+
             var __pathBuilder = new global::BlandAI.PathBuilder(
                 path: "/v1/me",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace BlandAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

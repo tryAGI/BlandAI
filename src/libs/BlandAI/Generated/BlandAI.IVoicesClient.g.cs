@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// Voice listing and management<br/>
+    /// Voice listing and management.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

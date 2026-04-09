@@ -5,6 +5,25 @@ namespace BlandAI
 {
     public partial class BatchesClient
     {
+
+
+        private static readonly global::BlandAI.EndPointSecurityRequirement s_ListBatchesSecurityRequirement0 =
+            new global::BlandAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::BlandAI.EndPointAuthorizationRequirement[]
+                {                    new global::BlandAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::BlandAI.EndPointSecurityRequirement[] s_ListBatchesSecurityRequirements =
+            new global::BlandAI.EndPointSecurityRequirement[]
+            {                s_ListBatchesSecurityRequirement0,
+            };
         partial void PrepareListBatchesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? take,
@@ -43,13 +62,19 @@ namespace BlandAI
                 take: ref take,
                 skip: ref skip);
 
+
+            var __authorizations = global::BlandAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListBatchesSecurityRequirements,
+                operationName: "ListBatchesAsync");
+
             var __pathBuilder = new global::BlandAI.PathBuilder(
                 path: "/v2/batches/list",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("take", take?.ToString())
                 .AddOptionalParameter("skip", skip?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -59,7 +84,7 @@ namespace BlandAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

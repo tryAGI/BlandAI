@@ -6,6 +6,7 @@ namespace BlandAI
     public sealed partial class BlandAIClient
     {
         /// <inheritdoc cref="BlandAIClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::BlandAI.EndPointAuthorization}?, bool)"/>
+
         public BlandAIClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
