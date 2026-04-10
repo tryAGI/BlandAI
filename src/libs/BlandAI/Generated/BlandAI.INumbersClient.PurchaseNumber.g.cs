@@ -9,11 +9,13 @@ namespace BlandAI
         /// Purchase a new phone number for inbound calls ($15/mo subscription).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlandAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::BlandAI.StatusResponse> PurchaseNumberAsync(
 
             global::BlandAI.PurchaseNumberRequest request,
+            global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Purchase Phone Number<br/>
@@ -30,12 +32,14 @@ namespace BlandAI
         /// <param name="phoneNumber">
         /// Exact number in E.164 format (overrides area_code if provided)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlandAI.StatusResponse> PurchaseNumberAsync(
             string? areaCode = default,
             global::BlandAI.PurchaseNumberRequestCountryCode? countryCode = default,
             string? phoneNumber = default,
+            global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

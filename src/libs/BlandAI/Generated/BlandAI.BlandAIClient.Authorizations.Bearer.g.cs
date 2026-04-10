@@ -25,6 +25,7 @@ namespace BlandAI
             Authorizations.Add(new global::BlandAI.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "BearerAuth",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,
