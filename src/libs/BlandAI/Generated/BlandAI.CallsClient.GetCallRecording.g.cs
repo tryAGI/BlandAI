@@ -122,10 +122,10 @@ namespace BlandAI
                 } 
             }
 
-                if (contentType != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType?.ToValueString() ?? string.Empty);
-                }
+            if (contentType != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType?.ToValueString() ?? string.Empty);
+            }
 
                 global::BlandAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
