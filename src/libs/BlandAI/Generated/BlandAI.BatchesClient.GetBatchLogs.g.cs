@@ -125,7 +125,7 @@ namespace BlandAI
                 PrepareGetBatchLogsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    batchId: batchId);
+                    batchId: batchId!);
 
                 return __httpRequest;
             }

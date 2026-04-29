@@ -125,7 +125,7 @@ namespace BlandAI
                 PrepareDeletePathwayRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pathwayId: pathwayId);
+                    pathwayId: pathwayId!);
 
                 return __httpRequest;
             }

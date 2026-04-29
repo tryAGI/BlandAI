@@ -139,7 +139,7 @@ namespace BlandAI
                 PrepareUpdateInboundNumberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    phoneNumber: phoneNumber,
+                    phoneNumber: phoneNumber!,
                     request: request);
 
                 return __httpRequest;

@@ -139,7 +139,7 @@ namespace BlandAI
                 PrepareUpdatePathwayRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pathwayId: pathwayId,
+                    pathwayId: pathwayId!,
                     request: request);
 
                 return __httpRequest;
