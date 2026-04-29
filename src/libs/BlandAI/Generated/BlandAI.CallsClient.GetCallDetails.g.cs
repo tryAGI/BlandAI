@@ -125,7 +125,7 @@ namespace BlandAI
                 PrepareGetCallDetailsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    callId: callId);
+                    callId: callId!);
 
                 return __httpRequest;
             }

@@ -138,7 +138,7 @@ namespace BlandAI
                 PrepareGetCallRecordingRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    callId: callId,
+                    callId: callId!,
                     contentType: contentType);
 
                 return __httpRequest;
