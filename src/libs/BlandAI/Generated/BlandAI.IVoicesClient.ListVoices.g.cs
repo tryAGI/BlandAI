@@ -14,5 +14,15 @@ namespace BlandAI
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::BlandAI.Voice>> ListVoicesAsync(
             global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List Voices<br/>
+        /// Retrieve all available voices, including public and custom voices.
+        /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlandAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlandAI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::BlandAI.Voice>>> ListVoicesAsResponseAsync(
+            global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
