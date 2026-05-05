@@ -112,6 +112,72 @@ namespace BlandAI
             global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListCallsAsResponseAsync(
+                fromNumber: fromNumber,
+                toNumber: toNumber,
+                from: from,
+                to: to,
+                limit: limit,
+                ascending: ascending,
+                sortBy: sortBy,
+                startDate: startDate,
+                endDate: endDate,
+                completed: completed,
+                batchId: batchId,
+                answeredBy: answeredBy,
+                inbound: inbound,
+                campaignId: campaignId,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Calls<br/>
+        /// Returns metadata for calls dispatched by your account.
+        /// </summary>
+        /// <param name="fromNumber"></param>
+        /// <param name="toNumber"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="limit">
+        /// Default Value: 1000
+        /// </param>
+        /// <param name="ascending">
+        /// Default Value: false
+        /// </param>
+        /// <param name="sortBy">
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="completed"></param>
+        /// <param name="batchId"></param>
+        /// <param name="answeredBy"></param>
+        /// <param name="inbound"></param>
+        /// <param name="campaignId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlandAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::BlandAI.AutoSDKHttpResponse<global::BlandAI.ListCallsResponse>> ListCallsAsResponseAsync(
+            string? fromNumber = default,
+            string? toNumber = default,
+            int? from = default,
+            int? to = default,
+            int? limit = default,
+            bool? ascending = default,
+            global::BlandAI.ListCallsSortBy? sortBy = default,
+            string? startDate = default,
+            string? endDate = default,
+            bool? completed = default,
+            string? batchId = default,
+            string? answeredBy = default,
+            bool? inbound = default,
+            string? campaignId = default,
+            global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListCallsArguments(
@@ -153,9 +219,10 @@ namespace BlandAI
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::BlandAI.PathBuilder(
                                 path: "/v1/calls",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("from_number", fromNumber)
                                 .AddOptionalParameter("to_number", toNumber)
@@ -170,7 +237,7 @@ namespace BlandAI
                                 .AddOptionalParameter("batch_id", batchId)
                                 .AddOptionalParameter("answered_by", answeredBy)
                                 .AddOptionalParameter("inbound", inbound?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("campaign_id", campaignId) 
+                                .AddOptionalParameter("campaign_id", campaignId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::BlandAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -255,6 +322,8 @@ namespace BlandAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -265,6 +334,11 @@ namespace BlandAI
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::BlandAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::BlandAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -282,6 +356,8 @@ namespace BlandAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -291,8 +367,7 @@ namespace BlandAI
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::BlandAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -301,6 +376,11 @@ namespace BlandAI
                         __attempt < __maxAttempts &&
                         global::BlandAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::BlandAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::BlandAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::BlandAI.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -317,14 +397,15 @@ namespace BlandAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::BlandAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -364,6 +445,8 @@ namespace BlandAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -384,6 +467,8 @@ namespace BlandAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -408,9 +493,13 @@ namespace BlandAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::BlandAI.ListCallsResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::BlandAI.ListCallsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::BlandAI.AutoSDKHttpResponse<global::BlandAI.ListCallsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::BlandAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -438,9 +527,13 @@ namespace BlandAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::BlandAI.ListCallsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::BlandAI.ListCallsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::BlandAI.AutoSDKHttpResponse<global::BlandAI.ListCallsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::BlandAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
