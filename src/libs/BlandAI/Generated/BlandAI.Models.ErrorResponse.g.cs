@@ -58,5 +58,6 @@ namespace BlandAI
         public ErrorResponse()
         {
         }
+
     }
 }

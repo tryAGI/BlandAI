@@ -218,5 +218,6 @@ namespace BlandAI
         public UpdateInboundNumberRequest()
         {
         }
+
     }
 }
