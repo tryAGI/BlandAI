@@ -61,5 +61,6 @@ namespace BlandAI
         public PathwayNode()
         {
         }
+
     }
 }

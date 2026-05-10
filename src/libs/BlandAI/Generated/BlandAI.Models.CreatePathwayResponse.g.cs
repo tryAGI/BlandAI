@@ -49,5 +49,6 @@ namespace BlandAI
         public CreatePathwayResponse()
         {
         }
+
     }
 }

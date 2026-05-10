@@ -41,5 +41,6 @@ namespace BlandAI
         public PathwayEdgeData()
         {
         }
+
     }
 }

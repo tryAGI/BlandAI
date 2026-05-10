@@ -360,5 +360,6 @@ namespace BlandAI
         public CallDetails()
         {
         }
+
     }
 }

@@ -39,5 +39,6 @@ namespace BlandAI
         public DataResponseBatchIdData()
         {
         }
+
     }
 }
