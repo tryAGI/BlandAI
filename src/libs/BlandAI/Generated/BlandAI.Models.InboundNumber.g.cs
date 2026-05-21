@@ -156,5 +156,6 @@ namespace BlandAI
         public InboundNumber()
         {
         }
+
     }
 }

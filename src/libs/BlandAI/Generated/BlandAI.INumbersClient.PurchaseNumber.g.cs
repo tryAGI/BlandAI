@@ -21,6 +21,19 @@ namespace BlandAI
         /// Purchase Phone Number<br/>
         /// Purchase a new phone number for inbound calls ($15/mo subscription).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlandAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlandAI.AutoSDKHttpResponse<global::BlandAI.StatusResponse>> PurchaseNumberAsResponseAsync(
+
+            global::BlandAI.PurchaseNumberRequest request,
+            global::BlandAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Purchase Phone Number<br/>
+        /// Purchase a new phone number for inbound calls ($15/mo subscription).
+        /// </summary>
         /// <param name="areaCode">
         /// Three-digit area code for the phone number<br/>
         /// Default Value: 415

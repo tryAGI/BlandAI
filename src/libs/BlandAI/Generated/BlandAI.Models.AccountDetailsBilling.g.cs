@@ -52,5 +52,6 @@ namespace BlandAI
         public AccountDetailsBilling()
         {
         }
+
     }
 }

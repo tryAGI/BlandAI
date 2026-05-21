@@ -54,5 +54,6 @@ namespace BlandAI
         public AnalyzeCallRequest()
         {
         }
+
     }
 }

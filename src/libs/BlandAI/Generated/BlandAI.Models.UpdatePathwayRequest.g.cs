@@ -74,5 +74,6 @@ namespace BlandAI
         public UpdatePathwayRequest()
         {
         }
+
     }
 }
