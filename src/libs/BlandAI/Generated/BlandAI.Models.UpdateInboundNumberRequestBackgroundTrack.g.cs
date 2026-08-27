@@ -4,24 +4,24 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UpdateInboundNumberRequestBackgroundTrack
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cafe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Null,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Office,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Restaurant,
     }

@@ -20,7 +20,7 @@ namespace BlandAI.JsonConverters
                     {
                         return global::BlandAI.UpdateInboundNumberRequestModelExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

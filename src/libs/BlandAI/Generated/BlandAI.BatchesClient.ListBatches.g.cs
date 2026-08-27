@@ -146,7 +146,7 @@ namespace BlandAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::BlandAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

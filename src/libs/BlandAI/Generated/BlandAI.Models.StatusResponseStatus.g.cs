@@ -4,16 +4,16 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StatusResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

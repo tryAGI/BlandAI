@@ -4,12 +4,12 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CallDetails
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         public string? CallId { get; set; }
@@ -21,55 +21,55 @@ namespace BlandAI
         public float? CallLength { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_id")]
         public string? BatchId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
         public string? To { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
         public string? From { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_data")]
         public object? RequestData { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed")]
         public bool? Completed { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inbound")]
         public bool? Inbound { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_at")]
         public global::System.DateTime? EndAt { get; set; }
@@ -82,13 +82,13 @@ namespace BlandAI
         public global::BlandAI.CallDetailsQueueStatus? QueueStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_duration")]
         public int? MaxDuration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         public string? ErrorMessage { get; set; }
@@ -107,19 +107,19 @@ namespace BlandAI
         public global::BlandAI.CallDetailsAnsweredBy? AnsweredBy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("record")]
         public bool? Record { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recording_url")]
         public string? RecordingUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
@@ -144,31 +144,31 @@ namespace BlandAI
         public global::BlandAI.CallDetailsCallEndedBy? CallEndedBy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pathway_id")]
         public string? PathwayId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pathway_logs")]
         public string? PathwayLogs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pathway_version")]
         public int? PathwayVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis_schema")]
         public object? AnalysisSchema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis")]
         public object? Analysis { get; set; }
@@ -180,7 +180,7 @@ namespace BlandAI
         public string? ConcatenatedTranscript { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcripts")]
         public global::System.Collections.Generic.IList<global::BlandAI.TranscriptEntry>? Transcripts { get; set; }
@@ -199,19 +199,19 @@ namespace BlandAI
         public string? CorrectedDuration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
         public string? VoiceId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transferred_to")]
         public string? TransferredTo { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transferred_at")]
         public global::System.DateTime? TransferredAt { get; set; }

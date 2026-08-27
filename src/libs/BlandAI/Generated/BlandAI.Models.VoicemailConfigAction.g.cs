@@ -9,15 +9,15 @@ namespace BlandAI
     public enum VoicemailConfigAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hangup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ignore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LeaveMessage,
     }

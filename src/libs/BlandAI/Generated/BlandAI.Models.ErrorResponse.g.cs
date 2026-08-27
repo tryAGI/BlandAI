@@ -4,25 +4,25 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ErrorResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlandAI.JsonConverters.ErrorResponseStatusJsonConverter))]
         public global::BlandAI.ErrorResponseStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         public global::System.Collections.Generic.IList<string>? Errors { get; set; }

@@ -4,12 +4,12 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListInboundNumbersResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inbound_numbers")]
         public global::System.Collections.Generic.IList<global::BlandAI.InboundNumber>? InboundNumbers { get; set; }

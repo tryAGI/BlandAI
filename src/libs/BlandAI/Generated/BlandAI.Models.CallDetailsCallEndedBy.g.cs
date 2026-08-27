@@ -9,11 +9,11 @@ namespace BlandAI
     public enum CallDetailsCallEndedBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

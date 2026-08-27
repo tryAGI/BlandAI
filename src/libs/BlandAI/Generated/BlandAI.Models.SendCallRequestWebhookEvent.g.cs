@@ -4,36 +4,36 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SendCallRequestWebhookEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Call,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Citations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DynamicData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latency,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

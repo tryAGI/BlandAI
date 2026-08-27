@@ -10,11 +10,11 @@ namespace BlandAI
     public enum PurchaseNumberRequestCountryCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ca,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Us,
     }

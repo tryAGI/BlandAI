@@ -9,19 +9,19 @@ namespace BlandAI
     public enum SendCallRequestBackgroundTrack
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cafe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Null,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Office,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Restaurant,
     }

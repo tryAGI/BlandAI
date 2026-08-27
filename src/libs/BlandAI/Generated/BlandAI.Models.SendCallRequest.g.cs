@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SendCallRequest
     {
@@ -166,7 +166,7 @@ namespace BlandAI
         public bool? Record { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voicemail")]
         public global::BlandAI.VoicemailConfig? Voicemail { get; set; }

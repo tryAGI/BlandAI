@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdatePathwayRequest
     {
