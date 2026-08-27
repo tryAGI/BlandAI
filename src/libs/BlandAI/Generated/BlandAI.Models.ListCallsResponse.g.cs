@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListCallsResponse
     {
@@ -21,7 +21,7 @@ namespace BlandAI
         public int? Count { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("calls")]
         public global::System.Collections.Generic.IList<global::BlandAI.CallSummary>? Calls { get; set; }

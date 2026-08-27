@@ -20,7 +20,7 @@ namespace BlandAI.JsonConverters
                     {
                         return global::BlandAI.SendCallRequestWebhookEventExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

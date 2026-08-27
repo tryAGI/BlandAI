@@ -4,19 +4,19 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreatePathwayResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlandAI.JsonConverters.CreatePathwayResponseStatusJsonConverter))]
         public global::BlandAI.CreatePathwayResponseStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pathway_id")]
         public string? PathwayId { get; set; }

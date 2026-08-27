@@ -4,16 +4,16 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UpdateInboundNumberRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Turbo,
     }

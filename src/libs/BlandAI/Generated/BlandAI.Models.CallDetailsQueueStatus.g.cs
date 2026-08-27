@@ -9,27 +9,27 @@ namespace BlandAI
     public enum CallDetailsQueueStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allocated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Complete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         New,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Started,
     }

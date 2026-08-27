@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PathwayEdge
     {
@@ -21,7 +21,7 @@ namespace BlandAI
         public string? Target { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::BlandAI.PathwayEdgeData? Data { get; set; }

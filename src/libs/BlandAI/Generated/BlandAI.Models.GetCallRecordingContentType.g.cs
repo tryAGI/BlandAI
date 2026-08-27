@@ -9,11 +9,11 @@ namespace BlandAI
     public enum GetCallRecordingContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioMpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioWav,
     }

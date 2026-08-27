@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AccountDetails
     {
@@ -15,7 +15,7 @@ namespace BlandAI
         public string? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billing")]
         public global::BlandAI.AccountDetailsBilling? Billing { get; set; }

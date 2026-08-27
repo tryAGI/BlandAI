@@ -10,11 +10,11 @@ namespace BlandAI
     public enum SendCallRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Turbo,
     }

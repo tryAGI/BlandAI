@@ -9,19 +9,19 @@ namespace BlandAI
     public enum CallDetailsAnsweredBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Human,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoAnswer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voicemail,
     }

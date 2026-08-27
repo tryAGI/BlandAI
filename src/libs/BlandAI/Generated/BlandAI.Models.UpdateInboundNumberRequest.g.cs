@@ -4,7 +4,7 @@
 namespace BlandAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateInboundNumberRequest
     {
@@ -28,7 +28,7 @@ namespace BlandAI
         public string? FirstSentence { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlandAI.JsonConverters.UpdateInboundNumberRequestModelJsonConverter))]
@@ -47,38 +47,38 @@ namespace BlandAI
         public string? Timezone { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background_track")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlandAI.JsonConverters.UpdateInboundNumberRequestBackgroundTrackJsonConverter))]
         public global::BlandAI.UpdateInboundNumberRequestBackgroundTrack? BackgroundTrack { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("block_interruptions")]
         public bool? BlockInterruptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interruption_threshold")]
         public int? InterruptionThreshold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_cancellation")]
         public bool? NoiseCancellation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_phone_number")]
         public string? TransferPhoneNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_list")]
         public global::System.Collections.Generic.Dictionary<string, string>? TransferList { get; set; }
@@ -90,13 +90,13 @@ namespace BlandAI
         public string? FallbackNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_data")]
         public object? RequestData { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dynamic_data")]
         public global::System.Collections.Generic.IList<object>? DynamicData { get; set; }
@@ -108,19 +108,19 @@ namespace BlandAI
         public int? MaxDuration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("record")]
         public bool? Record { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook")]
         public string? Webhook { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events")]
         public global::System.Collections.Generic.IList<string>? WebhookEvents { get; set; }
